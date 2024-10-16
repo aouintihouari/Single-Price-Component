@@ -1,0 +1,168 @@
+:root {
+  --base-font-size: 16px;
+  --normal-font-weight: 400;
+  --bold-font-weight: 700;
+  --white: #ffffff;
+  --primary-cyan: #2ab3b1;
+  --primary-bright-yellow: #c0df33;
+  --neutral-light-gray: hsl(204, 43%, 93%);
+  --neutral-grayish-blue: #e6eff5;
+  --description-text: #9aa7be;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Karla", sans-serif;
+  font-size: var(--base-font-size);
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--neutral-grayish-blue);
+  color: var(--white);
+  padding: 2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "join join"
+    "subscription why";
+  align-items: center;
+  width: 40rem;
+  height: 30rem;
+}
+
+.container .join,
+.container .subscription,
+.container .why-us {
+  height: 15rem;
+  padding: 2.5rem;
+}
+
+.container .join {
+  grid-area: join;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  background-color: var(--white);
+  color: var(--description-text);
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+  line-height: 26px;
+}
+
+.container .join .title {
+  font-size: 1.5rem;
+  font-weight: var(--bold-font-weight);
+  letter-spacing: -0.3px;
+  color: var(--primary-cyan);
+  margin-bottom: 0.5rem;
+}
+
+.container .join .subtitle {
+  font-size: 1.125rem;
+  font-weight: var(--bold-font-weight);
+  letter-spacing: -0.22px;
+  color: var(--primary-bright-yellow);
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.container .join .description {
+  font-weight: var(--normal-font-weight);
+  margin-bottom: 1rem;
+}
+
+.subscription .price-section .period {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.container .join .description {
+  margin-bottom: 1rem;
+}
+
+.container .subscription {
+  grid-area: subscription;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: var(--primary-cyan);
+  border-bottom-left-radius: 0.25rem;
+}
+
+.container .subscription .price-section {
+  display: flex;
+  align-items: center;
+}
+
+.subscription .price-section .price {
+  font-size: 32px;
+  font-weight: var(--bold-font-weight);
+  margin-right: 1rem;
+}
+
+.subscription .price-section .period {
+  color: var(--neutral-light-gray);
+}
+
+.container .subscription .description {
+  margin-bottom: 2rem;
+}
+
+.container .subscription .btn {
+  font-weight: var(--bold-font-weight);
+  width: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  color: var(--white);
+  background-color: var(--primary-bright-yellow);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.container .why-us {
+  grid-area: why;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  background-color: var(--primary-cyan);
+  opacity: 0.8;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.container .why-us .title {
+  font-size: 1.2rem;
+  margin-bottom: 0.9rem;
+}
+
+.container .why-us .description {
+  width: 75%;
+  letter-spacing: -0.17px;
+  line-height: 20px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 27rem) {
+  .container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 90%;
+    height: auto;
+    grid-template-areas:
+      "join"
+      "subscription"
+      "why";
+  }
+
+  .container .join {
+    height: 21rem;
+  }
+  .container .subscription {
+    height: 18rem;
+  }
+  .container .why-us {
+    height: 14rem;
+  }
+}
